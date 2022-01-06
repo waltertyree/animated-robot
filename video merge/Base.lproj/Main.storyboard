@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,50 +13,50 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="video_merge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tY9-PT-3uc">
-                                <rect key="frame" x="531" y="100" width="51" height="31"/>
+                                <rect key="frame" x="345" y="144" width="51" height="31"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdD-Et-eQ4">
-                                <rect key="frame" x="531" y="139" width="51" height="31"/>
+                                <rect key="frame" x="345" y="183" width="51" height="31"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aAL-zP-8HH">
-                                <rect key="frame" x="531" y="178" width="51" height="31"/>
+                                <rect key="frame" x="345" y="222" width="51" height="31"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7A4-nx-0g3">
-                                <rect key="frame" x="531" y="217" width="51" height="31"/>
+                                <rect key="frame" x="345" y="261" width="51" height="31"/>
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drP-lg-RBN">
-                                <rect key="frame" x="20" y="5.5" width="560" height="594.5"/>
+                                <rect key="frame" x="20" y="465" width="374" height="397"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="drP-lg-RBN" secondAttribute="height" multiplier="374:397" id="1f5-Lx-t0a"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountains" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzH-Sv-9tf">
-                                <rect key="frame" x="20" y="144" width="80" height="21"/>
+                                <rect key="frame" x="20" y="188" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert Moo Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtL-uu-MB0">
-                                <rect key="frame" x="40" y="183" width="135" height="21"/>
+                                <rect key="frame" x="40" y="227" width="135" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1w-qB-5o3">
-                                <rect key="frame" x="241" y="-23" width="118" height="31"/>
+                                <rect key="frame" x="148" y="436.5" width="118" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Combine Clips"/>
                                 <connections>
-                                    <action selector="mergeMutableMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TZT-gE-s3s"/>
+                                    <action selector="mergeClips:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hai-Th-yAn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xc-ZI-hfT">
-                                <rect key="frame" x="530" y="8" width="50" height="50"/>
+                                <rect key="frame" x="344" y="52" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3H1-H5-YKC"/>
                                     <constraint firstAttribute="width" constant="50" id="Hqx-sp-PA0"/>
@@ -67,13 +68,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stream" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogz-AA-pbG">
-                                <rect key="frame" x="20" y="105" width="55" height="21"/>
+                                <rect key="frame" x="20" y="149" width="55" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beach" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfC-g4-yeR">
-                                <rect key="frame" x="20" y="222" width="48" height="21"/>
+                                <rect key="frame" x="20" y="266" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -111,7 +112,7 @@
                         <outlet property="beachMovieSwitch" destination="7A4-nx-0g3" id="IaU-tq-qta"/>
                         <outlet property="cowMooSwitch" destination="aAL-zP-8HH" id="Iy4-AJ-hLx"/>
                         <outlet property="exportMovieButton" destination="5Xc-ZI-hfT" id="dcw-ik-C1g"/>
-                        <outlet property="mergeWithMutableMovieButton" destination="c1w-qB-5o3" id="hOy-k3-D5b"/>
+                        <outlet property="mergeClipsButton" destination="c1w-qB-5o3" id="VCn-bk-7It"/>
                         <outlet property="mountainMovieSwitch" destination="PdD-Et-eQ4" id="lXh-Ei-Dh0"/>
                         <outlet property="playerView" destination="drP-lg-RBN" id="vjt-xQ-aFP"/>
                         <outlet property="streamMovieSwitch" destination="tY9-PT-3uc" id="n0m-Fh-6Ma"/>

@@ -16,7 +16,7 @@ class ViewController: UIViewController {
   @IBOutlet var cowMooSwitch: UISwitch!
   
   @IBOutlet var exportMovieButton: UIButton!
-  @IBOutlet var mergeWithMutableMovieButton: UIButton!
+  @IBOutlet var mergeClipsButton: UIButton!
 
 
   @IBOutlet var playerView: UIView!
@@ -55,13 +55,16 @@ class ViewController: UIViewController {
 
         try videoTrack?.insertTimeRange(mountainRange, of: mountainVideoTrack, at: currentDuration)
         if self.cowMooSwitch.isOn {
+          let cowTrack = movie.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid)
           let cowMoo = AVURLAsset(url: Bundle.main.url(forResource: "Cow-moo-sound", withExtension: "mp3")!)
           let cowMooRange = CMTimeRangeMake(start: CMTime.zero, duration: cowMoo.duration)
 
-          try audioTrack?.insertTimeRange(cowMooRange, of: cowMoo.tracks(withMediaType: .audio).first!, at: currentDuration)
-        } else {
-          try audioTrack?.insertTimeRange(mountainRange, of: mountainAudioTrack, at: currentDuration)
+          cowTrack?.insertEmptyTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: currentDuration))
+
+          try cowTrack?.insertTimeRange(cowMooRange, of: cowMoo.tracks(withMediaType: .audio).first!, at: currentDuration)
         }
+          try audioTrack?.insertTimeRange(mountainRange, of: mountainAudioTrack, at: currentDuration)
+
         videoTrack?.preferredTransform = mountainVideoTrack.preferredTransform
         currentDuration = movie.duration
       }
@@ -97,7 +100,7 @@ class ViewController: UIViewController {
     guard let assetToExport = self.player?.currentItem?.asset else { return }
     guard let outputMovieURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("exported.mov") else { return }
 
-    mergeWithMutableMovieButton.isEnabled = false
+    mergeClipsButton.isEnabled = false
 
     export(assetToExport, to: outputMovieURL)
 
@@ -134,7 +137,7 @@ class ViewController: UIViewController {
 
   func shareVideoFile(_ file:URL) {
 
-    mergeWithMutableMovieButton.isEnabled = true
+    mergeClipsButton.isEnabled = true
 
     // Create the Array which includes the files you want to share
     var filesToShare = [Any]()
