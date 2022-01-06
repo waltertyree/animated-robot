@@ -36,15 +36,15 @@ class ViewController: UIViewController {
       var currentDuration = movie.duration
 
       if self.streamMovieSwitch.isOn {
-      let streamMovie = AVURLAsset(url: Bundle.main.url(forResource: "stream", withExtension: "mov")!)
-      let streamRange = CMTimeRangeMake(start: CMTime.zero, duration: streamMovie.duration)
-      let streamAudioTrack = streamMovie.tracks(withMediaType: .audio).first!
-      let streamVideoTrack = streamMovie.tracks(withMediaType: .video).first!
+        let streamMovie = AVURLAsset(url: Bundle.main.url(forResource: "stream", withExtension: "mov")!)
+        let streamRange = CMTimeRangeMake(start: CMTime.zero, duration: streamMovie.duration)
+        let streamAudioTrack = streamMovie.tracks(withMediaType: .audio).first!
+        let streamVideoTrack = streamMovie.tracks(withMediaType: .video).first!
 
-      try videoTrack?.insertTimeRange(streamRange, of: streamVideoTrack, at: currentDuration)
-      try audioTrack?.insertTimeRange(streamRange, of: streamAudioTrack, at: currentDuration)
-      videoTrack?.preferredTransform = streamVideoTrack.preferredTransform
-      currentDuration = movie.duration
+        try videoTrack?.insertTimeRange(streamRange, of: streamVideoTrack, at: currentDuration)
+        try audioTrack?.insertTimeRange(streamRange, of: streamAudioTrack, at: currentDuration)
+        videoTrack?.preferredTransform = streamVideoTrack.preferredTransform
+        currentDuration = movie.duration
       }
 
       if self.mountainMovieSwitch.isOn {
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
 
           try audioTrack?.insertTimeRange(cowMooRange, of: cowMoo.tracks(withMediaType: .audio).first!, at: currentDuration)
         } else {
-        try audioTrack?.insertTimeRange(mountainRange, of: mountainAudioTrack, at: currentDuration)
+          try audioTrack?.insertTimeRange(mountainRange, of: mountainAudioTrack, at: currentDuration)
         }
         videoTrack?.preferredTransform = mountainVideoTrack.preferredTransform
         currentDuration = movie.duration
