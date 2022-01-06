@@ -27,18 +27,10 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
 
-  @IBAction func mergeMutableMovie(_ sender: Any) {
+  @IBAction func mergeClips(_ sender: Any) {
     let movie = AVMutableComposition()
     let videoTrack = movie.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
     let audioTrack = movie.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid)
-
-
-
-
-
-
-
-
 
     do {
       var currentDuration = movie.duration
